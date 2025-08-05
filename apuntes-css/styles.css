@@ -1,0 +1,120 @@
+/* -----------------------------
+   Estilos básicos de texto
+------------------------------ */
+body {
+  color: black;                  /* Color del texto */
+  background-color: white;       /* Color de fondo */
+  font-size: 16px;               /* Tamaño de fuente */
+  font-family: Arial, sans-serif;/* Familia de fuente */
+  text-align: left;              /* Alineación del texto */
+  font-weight: normal;           /* Peso del texto (normal, bold, etc.) */
+}
+
+/* -----------------------------
+   Modelo de caja (Box Model)
+------------------------------ */
+.contenedor {
+  width: 300px;                  /* Ancho */
+  height: 200px;                 /* Alto */
+  margin: 20px;                  /* Margen exterior */
+  padding: 15px;                 /* Relleno interno */
+  border: 1px solid black;       /* Borde */
+  border-radius: 10px;           /* Bordes redondeados */
+  box-shadow: 2px 2px 5px #ccc;  /* Sombra */
+  opacity: 1;                    /* Opacidad (0 a 1) */
+  transition: all 0.3s ease;     /* Transiciones suaves */
+  cursor: pointer;               /* Tipo de cursor */
+}
+
+/* -----------------------------
+   Posicionamiento
+------------------------------ */
+.caja {
+  position: relative;            /* Posicionamiento (relative, absolute...) */
+  top: 10px;                     /* Desplazamiento vertical */
+  left: 10px;                    /* Desplazamiento horizontal */
+  float: left;                   /* Flotado a la izquierda */
+  clear: both;                   /* Limpia los floats */
+}
+
+/* -----------------------------
+   Flexbox
+------------------------------ */
+.flex-container {
+  display: flex;                 /* Activar flexbox */
+  flex-direction: row;           /* Dirección (row, column) */
+  justify-content: space-between;/* Alineación horizontal */
+  align-items: center;           /* Alineación vertical */
+  flex-wrap: wrap;               /* Permitir que los elementos bajen de línea */
+  gap: 10px;                     /* Espacio entre elementos */
+}
+
+.flex-item {
+  flex: 1;                       /* Toma el mismo espacio que los demás */
+  order: 0;                      /* Orden visual */
+  align-self: auto;             /* Alineación individual */
+}
+
+
+/* --------------------------------
+   CONFIGURACIÓN GENERAL DE FLEXBOX
+---------------------------------- */
+.flex-container {
+  display: flex;               /* Activa Flexbox */
+  flex-direction: row;         /* Dirección principal: row | row-reverse | column | column-reverse */
+  flex-wrap: nowrap;           /* Envoltura: nowrap | wrap | wrap-reverse */
+  justify-content: flex-start; /* Alineación horizontal: 
+                                  flex-start | flex-end | center | space-between | space-around | space-evenly */
+  align-items: stretch;        /* Alineación vertical (eje cruzado): 
+                                  stretch | flex-start | flex-end | center | baseline */
+  align-content: stretch;      /* Alineación del conjunto de líneas (cuando hay múltiples líneas): 
+                                  stretch | flex-start | flex-end | center | space-between | space-around */
+  gap: 10px;                   /* Espacio entre elementos */
+  row-gap: 10px;               /* Espacio vertical entre filas */
+  column-gap: 10px;            /* Espacio horizontal entre columnas */
+}
+
+/* --------------------------------
+   PROPIEDADES DEL ELEMENTO HIJO (ITEM FLEX)
+---------------------------------- */
+.flex-item {
+  flex-grow: 0;                /* Crecimiento relativo: 0 (no crece) o 1+ (crece) */
+  flex-shrink: 1;              /* Contracción relativa: 0 (no se encoge) o 1+ (se encoge) */
+  flex-basis: auto;            /* Tamaño base del elemento (px, %, auto...) */
+  flex: 0 1 auto;              /* Shorthand: grow shrink basis */
+
+  align-self: auto;            /* Alineación individual: auto | flex-start | flex-end | center | baseline | stretch */
+  order: 0;                    /* Orden de aparición: menor número = antes */
+}
+
+
+/* ==========================================
+   TRANSICIONES Y EFECTOS
+========================================== */
+.efecto {
+  transition: all 0.3s ease;       /* Transición suave */
+  cursor: pointer;                 /* Tipo de cursor */
+}
+
+/* ==========================================
+   MEDIA QUERIES (RESPONSIVE)
+========================================== */
+/* Estilos para pantallas menores a 768px */
+@media screen and (max-width: 768px) {
+  .caja {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .flex-container {
+    flex-direction: column;
+  }
+}
+
+/* Estilos para pantallas mayores a 1200px */
+@media screen and (min-width: 1200px) {
+  .contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
